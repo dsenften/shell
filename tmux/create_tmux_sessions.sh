@@ -6,7 +6,7 @@ SERVERS=(
 )
 
 # SSH Key Pfad
-SSH_KEY="~/.ssh/id_ed25519"
+SSH_KEY="$HOME/.ssh/id_ed25519"
 
 check_session() {
     local session_name="$1"
