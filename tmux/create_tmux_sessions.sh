@@ -98,7 +98,7 @@ main() {
     list_sessions
     
     # Frage nach Session-Auswahl wenn mehrere verfügbar sind
-    local session_count=$(tmux list-sessions 2>/dev/null | wc -l)
+    session_count=$(tmux list-sessions 2>/dev/null | wc -l)
     
     if [ "$session_count" -gt 1 ]; then
         echo -e "\nMehrere Sessions verfügbar. Mit welcher Session möchten Sie sich verbinden?"
