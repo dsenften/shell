@@ -28,17 +28,14 @@ create_server_session() {
     
     # Erstelle neue Session mit erstem Fenster
     tmux new-session -d -s "$session_name"
-    sleep 1
     
     # Konfiguriere erstes Fenster
     tmux rename-window -t "$session_name" "main"
     tmux send-keys -t "$session_name" "ssh -t -i $SSH_KEY $server" C-m
-    sleep 1
     
     # Erstelle Split
     tmux split-window -h -t "$session_name"
     tmux send-keys -t "$session_name" "ssh -t -i $SSH_KEY $server" C-m
-    sleep 1
     
     # Erstelle Monitoring Fenster
     tmux new-window -t "$session_name" -n "monitoring"
